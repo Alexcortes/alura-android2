@@ -90,6 +90,20 @@ public class ListaAlunosActivity extends AppCompatActivity {
         intentSite.setData(Uri.parse(aluno.getSite()));
         visitarSite.setIntent(intentSite);
 
+
+        MenuItem enviarSms = menu.add("Enviar SMS");
+        Intent intentEnviar = new Intent(Intent.ACTION_VIEW);
+
+        intentEnviar.setData(Uri.parse("sms:"+aluno.getTelefone()));
+        enviarSms.setIntent(intentEnviar);
+
+        MenuItem itemMapa = menu.add("Visualizar no mapa");
+        Intent intentMapa = new Intent(Intent.ACTION_VIEW);
+
+        intentMapa.setData(Uri.parse("geo:0,0?q="+aluno.getEndereco()));
+        itemMapa.setIntent(intentMapa);
+
+
     }
 
     private void carregaLista() {
