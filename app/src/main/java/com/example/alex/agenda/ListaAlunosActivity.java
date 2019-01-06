@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.alex.agenda.adapter.AlunosAdapter;
 import com.example.alex.agenda.dao.AlunoDAO;
 import com.example.alex.agenda.modelo.Aluno;
 
@@ -125,7 +126,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
         dao.close();
 
         listaAlunos = findViewById(R.id.lista_alunos);
-        ArrayAdapter<Aluno> adapter = new ArrayAdapter<Aluno>(this, android.R.layout.simple_list_item_1, alunos);
+        AlunosAdapter adapter = new AlunosAdapter(this, alunos);
         listaAlunos.setAdapter(adapter);
     }
 }
