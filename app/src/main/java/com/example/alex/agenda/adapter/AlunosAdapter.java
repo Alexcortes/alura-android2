@@ -52,7 +52,6 @@ public class AlunosAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.list_item, parent, false);
         }
 
-
         TextView campoNome = view.findViewById(R.id.item_nome);
         campoNome.setText(aluno.getNome());
 
@@ -61,6 +60,7 @@ public class AlunosAdapter extends BaseAdapter {
 
         ImageView campoFoto = view.findViewById(R.id.item_foto);
         String caminhoFoto = aluno.getCaminhoFoto();
+
         if(caminhoFoto != null){
             Bitmap bitmap = BitmapFactory.decodeFile(caminhoFoto);
             Bitmap bitmapReduzido = Bitmap.createScaledBitmap(bitmap, 100, 100, true);
