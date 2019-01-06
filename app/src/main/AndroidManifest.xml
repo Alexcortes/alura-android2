@@ -3,6 +3,8 @@
     package="com.example.alex.agenda">
 
     <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+
 
     <application
         android:allowBackup="true"
@@ -33,6 +35,11 @@
                 android:resource="@xml/file_paths">
             </meta-data>
         </provider>
+        <receiver android:name=".receiver.SMSReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
